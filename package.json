@@ -1,0 +1,27 @@
+{
+  "name": "moonlight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amiagr/moonlight.git"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "amiagr",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/amiagr/moonlight/issues"
+  },
+  "homepage": "https://github.com/amiagr/moonlight#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^14.5.0"
+  }
+}
