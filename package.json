@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/amiagr/moonlight#readme",
   "dependencies": {
+    "crawler": "^1.2.2",
     "express": "^4.17.1",
     "node": "^14.5.0"
   }
