@@ -1,4 +1,21 @@
 html
     head
         title home
-    body hello
+        meta( name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" )
+        link( rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" )
+    body
+        .container
+            .row(style="height: 100vh")
+                .col.align-self-center
+                    .input-group.mb-3
+                        input.form-control(type="text" placeholder="Enter URL" aria-label="Enter URL" aria-describedby="basic-addon2")
+                        .input-group-append
+                            button.btn.btn-outline-success(type="button") Crawl
+                    .alert.alert-success(role="alert")
+                        | This is a success alert—check it out!
+
+
+
+        script( src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" )
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" )
+        script( src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" )
