@@ -1,5 +1,11 @@
+var express = require('express')
+var app = express()
+var router = express.Router()
 var Crawler = require("crawler");
 var fs = require("fs");
+let psl = require('psl');
+
+let domain = ''
 
 var c = new Crawler({
     maxConnections: 10,
@@ -13,15 +19,25 @@ var c = new Crawler({
             //a lean implementation of core jQuery designed specifically for the server
             // fs.createWriteStream(`${res.options.filename}.html`).write($("a").text()+ '/n');
             $("a").each(function(i, link){
-                fs.appendFile(`./sites/${$("title").text()}.txt`, $(link).attr('href') + '\n', () => {
-                    console.log('ok1')
+                fs.appendFile(`./sites/${domain}.txt`, $(link).attr('href') + '\n', (err) => {
+                    if (err) console.log(err)
                 })
-                // console.log($(link).text() + ':\n  ' + $(link).attr('href'));
             });
         }
         done();
     }
 });
 
-// Queue a list of URLs
-c.queue('http://www.amiagr.ir/');
+router.post('/', (req, res, next) => {
+    let url = req.body.url.replace(/(^\w+:|^)\/\//, '');
+    var parsed = psl.parse(url);
+    console.log(parsed.sld); // 'google'
+    domain = parsed.sld
+
+    // Queue a list of URLs
+    c.queue(req.body.url);
+    res.render('home', { domain: domain, code: 200})
+})
+
+
+module.exports = router;
