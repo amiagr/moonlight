@@ -22,7 +22,7 @@ app.use(sass({
 const crawlerHandler = require('./crawler')
 
 app.get('/', (req, res) => res.render('home'))
-app.use('/crawl', crawlerHandler)
+app.use('/', crawlerHandler)
 
 app.listen(app.get('port'), () => {
     console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
