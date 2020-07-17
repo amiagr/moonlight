@@ -7,13 +7,13 @@ html
         .container
             .row(style="height: 100vh")
                 .col.align-self-center
-                    form(action="/crawl" method="post")
+                    form(action="/" method="post")
                         .input-group.mb-3
                             input.form-control(name="url" type="text" placeholder="Enter URL" aria-label="Enter URL" aria-describedby="basic-addon2")
                             .input-group-append
                                 button.btn.btn-outline-success(type="submit") Crawl
                     .alert.alert-success(role="alert")
-                        | This is a success alert—check it out!
+                        | you can find your link in sites/#{domain}.txt
 
 
 
