@@ -19,10 +19,10 @@ app.use(sass({
     dest: path.join(__dirname, 'public')
 }))
 
-const crawlerHandler = require('./crawler')
+const Home = require('./home')
 
 app.get('/', (req, res) => res.render('home'))
-app.use('/', crawlerHandler)
+app.use('/', Home)
 
 app.listen(app.get('port'), () => {
     console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
